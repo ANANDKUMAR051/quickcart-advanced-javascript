@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickCart - Performance and DOM Events</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="container">
+        <header>
+            <p class="eyebrow">QUICKCART PRACTICAL</p>
+            <h1>Performance Optimization & DOM Events</h1>
+            <p>Try the search box, scroll area and product remove buttons.</p>
+        </header>
+
+        <section class="panel">
+            <h2>Debounced product search</h2>
+            <label for="searchInput">Search products</label>
+            <input id="searchInput" type="search" placeholder="Type a product name...">
+            <p id="searchStatus" class="status" aria-live="polite">Start typing to search.</p>
+        </section>
+
+        <section class="panel">
+            <h2>Event bubbling and delegation</h2>
+            <p>Click a remove button. The list handles clicks using one delegated listener.</p>
+            <ul id="productList" class="product-list">
+                <li data-product="Laptop"><span>Laptop</span><button type="button" class="remove-button">Remove</button></li>
+                <li data-product="Mouse"><span>Mouse</span><button type="button" class="remove-button">Remove</button></li>
+                <li data-product="Keyboard"><span>Keyboard</span><button type="button" class="remove-button">Remove</button></li>
+            </ul>
+            <p id="eventStatus" class="status" aria-live="polite">No product removed yet.</p>
+        </section>
+
+        <section class="panel scroll-panel">
+            <h2>Throttled scroll event</h2>
+            <p>Scroll inside this box. The scroll handler runs at most once per second.</p>
+            <div class="scroll-content">
+                <p>QuickCart product catalogue</p>
+                <p>New arrivals and popular items</p>
+                <p>Electronics · Accessories · Clothing</p>
+                <p>Scroll to see the event counter update.</p>
+                <p>Good performance keeps the page responsive.</p>
+                <p>Thanks for shopping with QuickCart.</p>
+            </div>
+            <p id="scrollStatus" class="status">Throttled scroll events: 0</p>
+        </section>
+
+        <section class="panel">
+            <h2>Memoization</h2>
+            <p>Calculate the same discount twice and check the browser console.</p>
+            <button id="memoButton" type="button">Calculate 10% discount twice</button>
+            <p id="memoStatus" class="status">No calculation yet.</p>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
